@@ -78,6 +78,7 @@ python main.py
 Nếu Terminal hiện dòng chữ 💖 Bạn gái ảo ... đã thức dậy và online!, nghĩa là bot đã hoạt động thành công. Bạn có thể vào server Discord và bắt đầu trò chuyện!
 
 📁 Cấu trúc dự án (Project Structure)
+```
 Plaintext
 Discord-AI-Girlfriend-ChatBot/
 ├── .env                  # (Bạn tự tạo) Chứa Token và API Key
@@ -88,6 +89,8 @@ Discord-AI-Girlfriend-ChatBot/
 └── utils/
     ├── ai_handler.py     # Xử lý giao tiếp với Gemini API & Tính cách
     └── db_handler.py     # Xử lý lưu/đọc lịch sử chat với Firebase
+```
+
 📌 Phiên bản
 Phiên bản hiện tại: Beta v0.0
 
