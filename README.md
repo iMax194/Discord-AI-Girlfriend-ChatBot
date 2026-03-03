@@ -92,4 +92,3 @@ Discord-AI-Girlfriend-ChatBot/
 Phiên bản hiện tại: Beta v0.0
 
 Dự án được xây dựng với mục đích học tập và giải trí cá nhân.
-```
