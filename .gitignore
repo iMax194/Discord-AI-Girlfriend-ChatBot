@@ -1,0 +1,10 @@
+# Bỏ qua môi trường ảo (vì nó rất nặng và ai cũng có thể tự cài được)
+venv/
+
+# Bỏ qua các file chứa mật khẩu, chìa khóa
+.env
+firebase_key.json
+
+# Bỏ qua các file rác của hệ thống Python
+__pycache__/
+*.pyc
