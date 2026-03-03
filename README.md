@@ -78,6 +78,7 @@ python main.py
 Nếu Terminal hiện dòng chữ 💖 Bạn gái ảo ... đã thức dậy và online!, nghĩa là bot đã hoạt động thành công. Bạn có thể vào server Discord và bắt đầu trò chuyện!
 
 📁 Cấu trúc dự án (Project Structure)
+
 ```
 Plaintext
 Discord-AI-Girlfriend-ChatBot/
@@ -85,6 +86,7 @@ Discord-AI-Girlfriend-ChatBot/
 ├── firebase_key.json     # (Bạn tự thêm) Chìa khóa kết nối Firebase
 ├── requirements.txt      # Danh sách thư viện
 ├── config.py             # Nạp biến môi trường
+├── keep_alive.py         # Giúp Render nhận diện Bot đang chạy
 ├── main.py               # File chạy chính của Bot
 └── utils/
     ├── ai_handler.py     # Xử lý giao tiếp với Gemini API & Tính cách
