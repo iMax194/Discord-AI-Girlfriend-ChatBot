@@ -31,31 +31,41 @@ Trước khi cài đặt, hãy đảm bảo máy tính của bạn đã có:
 ```bash
 git clone [https://github.com/iMax194/Discord-AI-Girlfriend-ChatBot.git](https://github.com/iMax194/Discord-AI-Girlfriend-ChatBot.git)
 cd Discord-AI-Girlfriend-ChatBot
-Bước 2: Tạo và kích hoạt môi trường ảo (Virtual Environment)
+```
+
+**Bước 2: Tạo và kích hoạt môi trường ảo (Virtual Environment)**
 
 Trên Windows:
 
-Bash
+```bash
 python -m venv venv
 venv\Scripts\activate
+```
+
 Trên MacOS/Linux:
 
-Bash
+```bash
 python3 -m venv venv
 source venv/bin/activate
-Bước 3: Cài đặt các thư viện cần thiết
+```
 
-Bash
+**Bước 3: Cài đặt các thư viện cần thiết**
+
+```bash
 pip install -r requirements.txt
-Bước 4: Thiết lập biến môi trường và Database
+```
+
+**Bước 4: Thiết lập biến môi trường và Database**
 
 Tạo một file tên là .env ở thư mục gốc của dự án.
 
 Dán các mã bí mật của bạn vào file .env theo định dạng sau:
 
-Đoạn mã
+```
 DISCORD_TOKEN="dán_token_discord_của_bạn_vào_đây"
 GEMINI_API_KEY="dán_api_key_gemini_của_bạn_vào_đây"
+```
+
 Đưa file chìa khóa của Firebase (đã đổi tên thành firebase_key.json) vào cùng thư mục gốc.
 
 ⚠️ CẢNH BÁO QUAN TRỌNG: Tuyệt đối KHÔNG đưa file .env và firebase_key.json lên GitHub để tránh lộ thông tin bảo mật! (Dự án đã có sẵn file .gitignore để chặn việc này).
