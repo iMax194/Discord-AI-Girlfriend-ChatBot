@@ -3,6 +3,9 @@ from config import DISCORD_TOKEN
 from utils.db_handler import get_chat_history, save_message
 from utils.ai_handler import get_ai_response
 
+from keep_alive import keep_alive
+keep_alive() # Gọi Web server để giữ bot sống
+
 # 1. Thiết lập quyền hạn
 intents = discord.Intents.default()
 intents.message_content = True
