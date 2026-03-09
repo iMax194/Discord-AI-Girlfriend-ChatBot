@@ -4,6 +4,7 @@ venv/
 # Bỏ qua các file chứa mật khẩu, chìa khóa
 .env
 firebase_key.json
+google_calendar.json
 
 # Bỏ qua các file rác của hệ thống Python
 __pycache__/

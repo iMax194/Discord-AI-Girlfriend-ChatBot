@@ -1,5 +1,6 @@
 import google.generativeai as genai
 from config import GEMINI_API_KEY
+from utils.calendar_handler import add_calendar_event
 
 # 1. Cấu hình API Key
 genai.configure(api_key=GEMINI_API_KEY)
@@ -21,7 +22,8 @@ Quy tắc BẮT BUỘC (Không bao giờ được vi phạm):
 # 3. Khởi tạo Mô hình AI
 model = genai.GenerativeModel(
     model_name="gemini-2.5-flash", # Bản flash cực nhanh và miễn phí
-    system_instruction=system_instruction
+    system_instruction=system_instruction,
+    tools=[add_calendar_event]
 )
 
 def get_ai_response(user_message, chat_history):
@@ -38,7 +40,10 @@ def get_ai_response(user_message, chat_history):
         })
     
     # Mở một phiên chat (truyền trí nhớ vào)
-    chat_session = model.start_chat(history=gemini_history)
+    chat_session = model.start_chat(
+        history=gemini_history,
+        enable_automatic_function_calling=True
+    )
     
     # Gửi tin nhắn mới của bạn và đợi cô ấy trả lời
     response = chat_session.send_message(user_message)
