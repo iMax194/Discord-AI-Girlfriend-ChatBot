@@ -70,6 +70,38 @@ GEMINI_API_KEY="dán_api_key_gemini_của_bạn_vào_đây"
 
 ⚠️ CẢNH BÁO QUAN TRỌNG: Tuyệt đối KHÔNG đưa file .env và firebase_key.json lên GitHub để tránh lộ thông tin bảo mật! (Dự án đã có sẵn file .gitignore để chặn việc này).
 
+### 📅 Phụ lục: Hướng dẫn thiết lập Google Calendar API (Bắt buộc để dùng tính năng Đặt lịch)
+
+Để Bot có quyền xem và ghi sự kiện vào lịch của bạn, bạn cần tạo một "Service Account" (Tài khoản dịch vụ robot) trên hệ thống của Google và chia sẻ lịch cá nhân cho robot này.
+
+**Bước 1: Bật API và tạo Service Account**
+
+1. Truy cập [Google Cloud Console](https://console.cloud.google.com/).
+2. Tạo một Project mới (hoặc chọn Project đang chứa Gemini API của bạn).
+3. Tìm kiếm **Google Calendar API** trên thanh tìm kiếm và bấm **Enable** (Bật).
+4. Điều hướng tới menu **IAM & Admin** > **Service Accounts**.
+5. Bấm **Create Service Account**, đặt tên (ví dụ: `bot-calendar`) và bấm **Done**.
+6. **[Quan trọng]** Copy lại địa chỉ email của Service Account vừa tạo (có đuôi dạng `...iam.gserviceaccount.com`).
+
+**Bước 2: Lấy chìa khóa (File JSON)**
+
+1. Bấm vào tên Service Account bạn vừa tạo.
+2. Chuyển sang tab **Keys** > **Add Key** > **Create new key** > Chọn định dạng **JSON**.
+3. File sẽ tự động tải về. Hãy đổi tên file đó thành **`google_calendar.json`** và copy vào thư mục gốc của dự án này.
+   _(Lưu ý: File này đã được thêm vào `.gitignore` để bảo mật)._
+
+**Bước 3: Chia sẻ quyền ghi Lịch cá nhân cho Bot (Bước quyết định)**
+
+1. Mở [Google Calendar](https://calendar.google.com/) cá nhân của bạn trên trình duyệt.
+2. Bấm vào biểu tượng Bánh răng (Cài đặt) góc trên bên phải > **Cài đặt**.
+3. Ở cột bên trái, tìm và nhấp vào lịch chính của bạn (thường mang tên bạn).
+4. Cuộn xuống mục **Chia sẻ với những người hoặc nhóm cụ thể** > Bấm **Thêm người và nhóm**.
+5. Dán địa chỉ email Service Account (đã copy ở Bước 1) vào ô trống.
+6. Ở mục Quyền, bạn **bắt buộc phải chọn**: **"Thực hiện thay đổi đối với sự kiện"** (Make changes to events).
+7. Bấm **Gửi**.
+
+Vậy là xong! Bây giờ Bot đã được ủy quyền hợp lệ để tự động ghi lịch hẹn trực tiếp vào Google Calendar của bạn.
+
 🎮 Cách sử dụng (Usage)
 Để khởi động Bot, hãy chắc chắn bạn đang ở trong môi trường ảo (venv) và chạy lệnh sau:
 
@@ -84,6 +116,7 @@ Plaintext
 Discord-AI-Girlfriend-ChatBot/
 ├── .env                  # (Bạn tự tạo) Chứa Token và API Key
 ├── firebase_key.json     # (Bạn tự thêm) Chìa khóa kết nối Firebase
+├── google_calendar.json  # (Bạn tự thêm) Chìa khóa kết nối Google Calendar
 ├── requirements.txt      # Danh sách thư viện
 ├── config.py             # Nạp biến môi trường
 ├── keep_alive.py         # Giúp Render nhận diện Bot đang chạy
