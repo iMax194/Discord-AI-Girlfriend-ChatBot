@@ -123,6 +123,7 @@ Discord-AI-Girlfriend-ChatBot/
 ├── main.py               # File chạy chính của Bot
 └── utils/
     ├── ai_handler.py     # Xử lý giao tiếp với Gemini API & Tính cách
+    ├── calendar_handler.py # Xử lý đặt lịch với Google Calendar API
     └── db_handler.py     # Xử lý lưu/đọc lịch sử chat với Firebase
 ```
 
