@@ -1,10 +1,28 @@
+import os
+import json
 import firebase_admin
 from firebase_admin import credentials, firestore
 import time
+from dotenv import load_dotenv
 
-# Khởi tạo kết nối với Firebase bằng file chìa khóa của bạn
-cred = credentials.Certificate("firebase_key.json")
-firebase_admin.initialize_app(cred)
+# Đảm bảo nạp biến môi trường
+load_dotenv()
+
+# 1. Tìm xem có biến môi trường FIREBASE_CREDENTIALS trên hệ thống không
+firebase_creds_json = os.getenv("FIREBASE_CREDENTIALS")
+
+# 2. Xử lý logic kết nối
+if firebase_creds_json:
+    # Nếu chạy trên Render, nó sẽ thấy biến này và dịch chuỗi JSON đó ra
+    creds_dict = json.loads(firebase_creds_json)
+    cred = credentials.Certificate(creds_dict)
+else:
+    # Nếu chạy trên máy tính của bạn, nó sẽ không thấy biến trên và quay về đọc file local
+    cred = credentials.Certificate("firebase_key.json")
+
+# 3. Khởi tạo Firebase (có kiểm tra để tránh lỗi khởi tạo 2 lần)
+if not firebase_admin._apps:
+    firebase_admin.initialize_app(cred)
 
 # Gọi database ra để chuẩn bị làm việc
 db = firestore.client()
