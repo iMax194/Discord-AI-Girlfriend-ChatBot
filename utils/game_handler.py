@@ -52,7 +52,7 @@ class BlackjackView(discord.ui.View):
             bot_str = f"{self.bot_hand[0]}  🎴 (Úp 1 lá)"
             bot_score_str = ""
             
-        msg = f"**🎲 SÒNG BÀI XÌ DÁCH CỦA YUMI**\n\n"
+        msg = f"**🎲 SÒNG BÀI XÌ DÁCH CỦA KAZUSA**\n\n"
         msg += f"🤖 **Yumi:** {bot_str} {bot_score_str}\n"
         msg += f"👤 **Anh:** {player_str} (Điểm: {player_score})\n\n"
         
