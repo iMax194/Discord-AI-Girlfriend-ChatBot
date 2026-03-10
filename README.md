@@ -1,6 +1,6 @@
 # Discord-AI-Girlfriend-ChatBot
 
-# 💖 Discord AI Girlfriend ChatBot (Beta v0.0)
+# 💖 Discord AI Girlfriend ChatBot
 
 Một dự án Bot Discord nhập vai "Bạn gái ảo" được xây dựng bằng Python. Bot sử dụng sức mạnh của **Google Gemini API** để tạo ra các đoạn hội thoại tự nhiên, có cảm xúc, kết hợp với **Firebase Firestore** để ghi nhớ ngữ cảnh cuộc trò chuyện.
 
@@ -124,10 +124,8 @@ Discord-AI-Girlfriend-ChatBot/
 └── utils/
     ├── ai_handler.py     # Xử lý giao tiếp với Gemini API & Tính cách
     ├── calendar_handler.py # Xử lý đặt lịch với Google Calendar API
-    └── db_handler.py     # Xử lý lưu/đọc lịch sử chat với Firebase
+    ├── db_handler.py     # Xử lý lưu/đọc lịch sử chat với Firebase
+    └── game_handler.py   # Xủ lý trò chơi trong Discord
 ```
-
-📌 Phiên bản
-Phiên bản hiện tại: Beta v0.0
 
 Dự án được xây dựng với mục đích học tập và giải trí cá nhân.
